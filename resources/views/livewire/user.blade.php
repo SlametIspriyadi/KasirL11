@@ -6,7 +6,7 @@
                     Semua Pengguna
                 </button>
                 <button wire:click="pilihMenu('tambah')" class="btn {{  $pilihanMenu=='tambah' ? 'btn-primary' : 'btn-outline-primary'}}">
-                    Tambah
+                    Tambah Pengguna
                 </button>
                 <button wire:loading class="btn btn-info">
                     Loading ...
