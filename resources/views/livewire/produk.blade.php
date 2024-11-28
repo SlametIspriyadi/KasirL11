@@ -6,7 +6,10 @@
                     Semua produk
                 </button>
                 <button wire:click="pilihMenu('tambah')" class="btn {{  $pilihanMenu=='tambah' ? 'btn-primary' : 'btn-outline-primary'}}">
-                    Tambah
+                    Tambah Produk
+                </button>
+                <button wire:click="pilihMenu('excel')" class="btn {{  $pilihanMenu=='excel' ? 'btn-primary' : 'btn-outline-primary'}}">
+                    Impor Produk
                 </button>
                 <button wire:loading class="btn btn-info">
                     Loading ...
@@ -133,18 +136,30 @@
                     </div>
                     <div class="card-body">
                         Anda yakin akan menghapus produk ini?
-                        <p>Nama: {{ $produkTerpilih->kode }}</p>
+                        <br>
+                        <p>Nama: {{ $produkTerpilih->nama }}</p>
+                        <p>Kode: {{ $produkTerpilih->kode }}</p>
                         <br>
                         <button class="btn btn-danger" wire:click='hapus'>Hapus</button>
                         <button class="btn btn-secondary" wire:click='batal'>Batal</button>
 
                     </div>
                 </div>
+                @elseif ($pilihanMenu=='excel')
+                <div class="card border-primary">
+                    <div class="card-header">
+                        Import produk
+                    </div>
+                    <div class="card-body">
+                        <form wire:submit='imporExcel'>
+                            <input type="file" class="form-control" wire:model='fileExcel'>
+                            <br />
+                            <button class="btn btn-primary" type="submit">Kirim</button>
+                        </form>
+                    </div>
+                </div>
                 @endif
             </div>
-        </div>
-
-        
-
+        </div>      
     </div>
 </div>

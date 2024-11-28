@@ -94,7 +94,7 @@
                         </a>
                         <a href="{{ route('transaksi') }}" wire:navigate
                          class="btn {{ request()->routeIs('transaksi') ? 'btn-primary' : 'btn-outline-primary'}}" > 
-                         transaksi
+                         Transaksi
                         </a>
                         <a href="{{ route('laporan') }}" wire:navigate
                          class="btn {{ request()->routeIs('laporan') ? 'btn-primary' : 'btn-outline-primary'}}" > 
